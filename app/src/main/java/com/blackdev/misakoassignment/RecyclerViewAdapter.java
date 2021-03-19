@@ -2,9 +2,6 @@ package com.blackdev.misakoassignment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +12,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.ahmadrosid.svgloader.SvgLoader;
-import com.squareup.picasso.Picasso;
+import com.blackdev.misakoassignment.database.RegionData;
+import com.blackdev.misakoassignment.database.RoomDB;
 
-import java.io.IOException;
-import java.net.URL;
-import java.nio.ByteBuffer;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

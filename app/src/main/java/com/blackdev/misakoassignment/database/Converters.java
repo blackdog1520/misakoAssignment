@@ -1,4 +1,4 @@
-package com.blackdev.misakoassignment;
+package com.blackdev.misakoassignment.database;
 
 import com.fasterxml.jackson.databind.AnnotationIntrospector;
 import com.google.gson.Gson;

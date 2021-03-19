@@ -1,4 +1,4 @@
-package com.blackdev.misakoassignment;
+package com.blackdev.misakoassignment.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,4 +1,4 @@
-package com.blackdev.misakoassignment;
+package com.blackdev.misakoassignment.database;
 
 import android.content.Context;
 

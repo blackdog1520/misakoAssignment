@@ -1,4 +1,6 @@
-package com.blackdev.misakoassignment;
+package com.blackdev.misakoassignment.api;
+
+import com.blackdev.misakoassignment.api.POJO;
 
 import java.util.List;
 

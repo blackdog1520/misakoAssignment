@@ -1,6 +1,4 @@
-package com.blackdev.misakoassignment;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package com.blackdev.misakoassignment.database;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
 
 @Entity(tableName = "data_table")

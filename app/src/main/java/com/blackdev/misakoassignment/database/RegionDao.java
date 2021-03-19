@@ -1,10 +1,11 @@
-package com.blackdev.misakoassignment;
+package com.blackdev.misakoassignment.database;
+
+import com.blackdev.misakoassignment.database.RegionData;
 
 import java.util.List;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
-import androidx.room.Index;
 import androidx.room.Insert;
 import androidx.room.Query;
 
