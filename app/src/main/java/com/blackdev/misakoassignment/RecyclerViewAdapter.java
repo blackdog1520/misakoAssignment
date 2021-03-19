@@ -156,10 +156,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             }else{
                 languagesListView.setVisibility(View.GONE);
             }
-            SvgLoader.pluck()
-                    .with(currActivity)
-                    .setPlaceHolder(R.mipmap.ic_launcher, R.mipmap.ic_launcher)
-                    .load(data.getUrl(), flag);
+            if(Utils.isNetworkAvailable(currActivity)) {
+                SvgLoader.pluck()
+                        .with(currActivity)
+                        .setPlaceHolder(R.mipmap.ic_launcher, R.mipmap.ic_launcher)
+                        .load(data.getUrl(), flag);
+            }
             //Picasso.get().load(data.getUrl()).into(flag);
         }
     }

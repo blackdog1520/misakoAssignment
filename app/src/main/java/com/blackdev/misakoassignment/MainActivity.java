@@ -11,6 +11,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 import static com.blackdev.misakoassignment.CustomScrollListener.PAGE_START;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     RecyclerView recyclerView;
     Button resetButton;
     LinearLayout rootLayout;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         adapter = new RecyclerViewAdapter(MainActivity.this,new ArrayList<>());
         recyclerView.setAdapter(adapter);
+        resetButton.setOnClickListener(this);
 
         if(Utils.isNetworkAvailable(this)){
             // get all data from rest api
@@ -66,7 +68,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.e(TAG,"Network not Available");
             dataList = database.regionDao().getAll();
+
             Log.e(TAG,"Size: "+dataList.size());
+            if(dataList.size() != 0)
+                doApiCall();
            // adapter.notifyDataSetChanged();
         }
 
@@ -167,6 +172,14 @@ public class MainActivity extends AppCompatActivity {
             data.setLanguages(lang);
             dataList.add(data);
             database.regionDao().insert(data);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view.getId() == R.id.resetButton) {
+            adapter.clear();
+            database.regionDao().reset(dataList);
         }
     }
 }
